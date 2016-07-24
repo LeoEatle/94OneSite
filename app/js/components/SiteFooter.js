@@ -9,7 +9,7 @@ const SiteFooter = function SiteFooter() {
   return (
     <footer className="ask-footer">
       <Container>
-        <p>© {year} AllMobilize, Inc. Licensed under MIT license.
+        <p>© {year} 94 OneSite. LeoEatle. 
           Developed with WebStorm.</p>
       </Container>
     </footer>

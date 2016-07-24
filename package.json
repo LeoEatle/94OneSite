@@ -71,5 +71,9 @@
     "plugins": [
       "transform-object-rest-spread"
     ]
+  },
+  "dependencies": {
+    "babel": "^6.5.2",
+    "babel-register": "^6.9.0"
   }
 }
