@@ -7,27 +7,21 @@ import {
   Route,
   IndexRoute,
   hashHistory,
-  Link,
+  
 
 } from 'react-router';
 
 
-var RouteHandler = Router.RouteHandler;
-
-import {
-  Header
-
-} from 'amazeui-react';
-
-
 import SiteFooter from './components/SiteFooter';
 import MenuInstance from './components/MenuInstance';
+import Navbar_bs from './components/Navbar_bs'
+
 
 class App extends Component {
   render() {
     return (
       <div className="ask-page">
-        <Header title="94一站" className="brand_title" />
+        <Navbar_bs></Navbar_bs>
         <MenuInstance />
         <main className="ask-main">
           {this.props.children}

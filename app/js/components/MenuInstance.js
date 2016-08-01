@@ -87,7 +87,7 @@ const menuInstance = React.createClass({
 
   render: function () {
     return (
-      
+
       <Menu className="menu" cols={4} data={data} onSelect={this.handleClick}/>
     );
   }

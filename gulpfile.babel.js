@@ -66,6 +66,7 @@ gulp.task('copy', function() {
     '!app/*.html',
     '!app/js',
     '!app/less',
+    'app/css/bootstrap.css',
     '!app/i',
     'node_modules/amazeui/dist/css/amazeui.min.css',
     'node_modules/amazeui/dist/fonts/*'
