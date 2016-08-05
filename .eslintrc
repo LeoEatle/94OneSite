@@ -1,5 +1,5 @@
 {
-  "extends": "airbnb",
+
   "rules": {
     /* JSX */
     "react/prop-types": [1, {

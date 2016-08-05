@@ -10,11 +10,11 @@ import {
 } from  'react-bootstrap';
 
 import ProductInstance from '../components/ProductInstance';
-import SiteFooter from '../components/SiteFooter';
-import Navbar_bs from '../components/Navbar_bs';
-
+import SlideBar from '../components/SlideBar';
 
 const Index = React.createClass({
+
+
   render() {
     //const imgUrl = '../i/kongge/index1.jpg';
     const data = {
@@ -43,18 +43,92 @@ const Index = React.createClass({
           "description" : '专业纯手工签名设计',
           "price" : 100
         }
+      ],
+      "Recommand":[
+        {
+          "imgUrl": '../i/taobaojpg/6.jpg',
+          "name": '绿舒衣装',
+          "description": '年轻人的第一次装修',
+          "price" : 150
+        },
+        {
+          "imgUrl": '../i/taobaojpg/7.jpg',
+          "name": '绿舒衣装',
+          "description": '年轻人的第一次装修',
+          "price" : 150
+        },
+        {
+          "imgUrl": '../i/taobaojpg/8.jpg',
+          "name": '绿舒衣装',
+          "description": '年轻人的第一次装修',
+          "price" : 150
+        },
+        {
+          "imgUrl": '../i/taobaojpg/9.jpg',
+          "name": '绿舒衣装',
+          "description": '年轻人的第一次装修',
+          "price" : 150
+        }
+      ],
+      "HighScore":[
+        {
+          "imgUrl": '../i/taobaojpg/10.jpg',
+          "name": '绿舒衣装',
+          "description": '年轻人的第一次装修',
+          "price" : 150
+        },
+        {
+          "imgUrl": '../i/taobaojpg/11.jpg',
+          "name": '绿舒衣装',
+          "description": '年轻人的第一次装修',
+          "price" : 150
+        },
+        {
+          "imgUrl": '../i/taobaojpg/12.jpg',
+          "name": '绿舒衣装',
+          "description": '年轻人的第一次装修',
+          "price" : 150
+        },
+        {
+          "imgUrl": '../i/taobaojpg/13.jpg',
+          "name": '绿舒衣装',
+          "description": '年轻人的第一次装修',
+          "price" : 150
+        }
+      ],
+      "OnSale":[
+        {
+          "imgUrl": '../i/taobaojpg/14.jpg',
+          "name": '绿舒衣装',
+          "description": '年轻人的第一次装修',
+          "price" : 150
+        },
+        {
+          "imgUrl": '../i/taobaojpg/15.jpg',
+          "name": '绿舒衣装',
+          "description": '年轻人的第一次装修',
+          "price" : 150
+        },
+        {
+          "imgUrl": '../i/taobaojpg/16.jpg',
+          "name": '绿舒衣装',
+          "description": '年轻人的第一次装修',
+          "price" : 150
+        },
+        {
+          "imgUrl": '../i/taobaojpg/17.jpg',
+          "name": '绿舒衣装',
+          "description": '年轻人的第一次装修',
+          "price" : 150
+        }
       ]
+
+
     };
-    // const backimg_style ={
-    //   backgroundImage: 'url(' + imgUrl + ')',
-    //   backgroundSize: 'cover',
-    //   backgroundRepeat: 'no-repeat',
-    // }
+
     let index = 0;
     console.log(data.hotSell);
-    // let productNodes = data.hotSell.map(function (product, index){
-    //   return (<Product key={index} product={product}></Product>);
-    // });
+
 
 
     return (
@@ -67,9 +141,28 @@ const Index = React.createClass({
                 return (<ProductInstance key={index} product={product}></ProductInstance>);
               })}
             </Row>
-          </Col>
-          <Col md={4} xs={12} className="slideBar">
+            <Row className="Recommand">
+              <PageHeader>推荐产品 <small>点击图片查看更多</small></PageHeader>
+              {data.Recommand.map((product, index) => {
+                return (<ProductInstance key={index} product={product}></ProductInstance>);
+              })}
+            </Row>
+            <Row className="HighScore">
+              <PageHeader>评价最高 <small>点击图片查看更多</small></PageHeader>
+              {data.HighScore.map((product, index) => {
+                return (<ProductInstance key={index} product={product}></ProductInstance>);
+              })}
+            </Row>
+            <Row className="hotSell">
+              <PageHeader>优惠产品 <small>点击图片查看更多</small></PageHeader>
+              {data.OnSale.map((product, index) => {
+                return (<ProductInstance key={index} product={product}></ProductInstance>);
+              })}
+            </Row>
 
+          </Col>
+          <Col md={4} xs={12} className="slideBar" >
+            <SlideBar></SlideBar>
           </Col>
         </Row>
       </Grid>

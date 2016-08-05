@@ -7,7 +7,7 @@ import {
   Route,
   IndexRoute,
   hashHistory,
-  
+
 
 } from 'react-router';
 
@@ -17,11 +17,34 @@ import MenuInstance from './components/MenuInstance';
 import Navbar_bs from './components/Navbar_bs'
 
 
-class App extends Component {
-  render() {
+const App = React.createClass({
+  getInitialState: function () {
+    return{
+      logged: this.checklogged(),
+    }
+  },
+
+  checklogged: function () {
+    let username = localStorage.getItem('username');
+    if(username != null){
+      console.log('now the user is ' + username);
+    }
+    return username || null;
+  },
+
+  onlogin: function (username) {
+    localStorage.setItem('username',username);
+    this.setState({logged: username });
+  },
+
+
+
+
+
+  render: function () {
     return (
       <div className="ask-page">
-        <Navbar_bs></Navbar_bs>
+        <Navbar_bs username={this.state.logged}></Navbar_bs>
         <MenuInstance />
         <main className="ask-main">
           {this.props.children}
@@ -30,14 +53,15 @@ class App extends Component {
       </div>
     );
   }
-}
+});
 
 // Pages
 import Index from './pages/Index';
 import Page1 from './pages/Page1';
 import Page2 from './pages/Page2';
-import Painting from './pages/Painting';
 import Category from './pages/Category';
+//import userRegister from './pages/userRegister';
+import sellerRegister from './pages/sellerRegister';
 
 const routes = (
   <Router history={hashHistory}>
@@ -45,7 +69,8 @@ const routes = (
       <IndexRoute component={Index} />
       <Route path="/page1" component={Page1} />
       <Route path="/page2" component={Page2} />
-      <Route path="/painting" component={Painting} />
+      {/*<Route path="/userRegister" component={userRegister} />*/}
+      <Route path="/sellerRegister" component={sellerRegister} />
       <Route path="/Categories/:category" component={Category} />
     </Route>
   </Router>

@@ -10,9 +10,30 @@ import {
   Button,
   Nav,
   NavItem,
+
 } from 'react-bootstrap';
 
 const NavBar_bs = React.createClass({
+  getInitialState: function () {
+    return({
+      username: this.props.username
+    });
+  },
+
+  componentWillMount: function(){
+     if(this.state.username != null){
+       this.checkUserName = <Navbar.Text pullRight>
+         您已登录: <Navbar.Link href="#">{this.state.username}</Navbar.Link>
+       </Navbar.Text>;
+     }
+    else {
+       this.checkUserName =  <Navbar.Text pullRight>
+         请先 <Navbar.Link href="#">登陆</Navbar.Link>或者 <Navbar.Link href="#/sellerRegister">注册</Navbar.Link>
+       </Navbar.Text>;
+     }
+   },
+
+
   render: function () {
     return (
       <Navbar>
@@ -25,13 +46,11 @@ const NavBar_bs = React.createClass({
         <Navbar.Collapse>
           <Nav>
             <NavItem href="#">登录</NavItem>
-            <NavItem href="#">申请帐号</NavItem>
-            <NavItem href="#">申请开店</NavItem>
+            <NavItem href="userRegister">申请帐号</NavItem>
+            <NavItem href="#/sellerRegister">申请开店</NavItem>
           </Nav>
 
-          <Navbar.Text pullRight>
-            您已登录: <Navbar.Link href="#">Mark Otto</Navbar.Link>
-          </Navbar.Text>
+          {this.checkUserName}
 
           <Navbar.Form pullRight>
             <FormGroup>
