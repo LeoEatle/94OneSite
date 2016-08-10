@@ -100,8 +100,8 @@ const NavBar_bs = React.createClass({
             <ModalTrigger modal={this.modal}>
               <NavItem href="#">登陆</NavItem>
             </ModalTrigger>
-            <NavItem href="userRegister">申请帐号</NavItem>
             <NavItem href="#/sellerRegister">申请开店</NavItem>
+            <NavItem href="#/forum">需求论坛</NavItem>
           </Nav>
 
           {this.checkUserName}

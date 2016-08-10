@@ -1,12 +1,17 @@
 @import "../../node_modules/amazeui/less/variables";
 @import "../../node_modules/amazeui/less/mixins";
 
+@theme-color: #CDDC39;
 
 html,
 body,
 #root {
   height: 100%;
   overflow: hidden;
+}
+
+h1 {
+  font-size: 20px;
 }
 
 .ask-page {
@@ -112,7 +117,7 @@ body,
 .page-header,
 .chart_title{
   h1{
-    border-left: 10px solid orange;
+    border-left: 10px solid @theme-color;
     padding-left: 10px;
 
   }
@@ -140,7 +145,7 @@ body,
   margin-right: 60px;
 }
 .total_price{
-  border: 1px dashed orange;
+  border: 1px dashed @theme-color;
   height: 3em;
   line-height: 3em;
   text-align: center;
@@ -149,4 +154,113 @@ body,
 .pay_button{
   width: 80%;
   margin-left: 2em;
+}
+
+
+//ServiceDetail
+.userAvatar{
+  text-align: center;
+}
+
+.titleBorder{
+  border-left: 10px solid @theme-color;
+  padding-left: 10px;
+}
+
+.userDescription{
+  border: 1px dashed #e6e6e6;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  h1{
+    border-left: 10px solid @theme-color;
+    padding-left: 10px;
+  }
+  p{
+    padding: 5px;
+  }
+}
+
+.servicePictures{
+  margin-bottom: 20px;
+}
+
+.serviceTitle{
+  h1{
+    border-bottom: 5px solid;
+    border-bottom-color: @theme-color;
+  }
+
+  :after{
+    border-top: 0px;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom: 3px solid @theme-color;
+    width: 0px;
+    height: 0px;
+  }
+}
+
+
+.productInstance{
+  height: 330px;
+  box-shadow: 5px 5px 10px #4d4d4d;
+  margin-bottom: 20px;
+  .productDescription{
+    height: 40px;
+    text-overflow: clip;
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+.label_theme{
+  background-color: @theme-color;
+  margin-right: 10px;
+}
+
+.commentAvatar{
+  width: 80px;
+  height: 80px;
+
+}
+
+.productTitle{
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.1em;
+
+}
+
+.textTheme{
+  color: @theme-color;
+}
+.commentHeader{
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 1px dashed @theme-color;
+}
+.commentList{
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.detailTitle{
+  border-bottom: 2px solid @theme-color;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  font-size: 20px;
+  padding-bottom: 5px;
+
+}
+
+.commentRow{
+}
+.commentContent{
+  margin-left: 0px;
+  width: 70%;
+}
+.userAvatar{
+  img{
+    width: 60%;
+  }
 }

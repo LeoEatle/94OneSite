@@ -29,12 +29,12 @@ const ProductInstance = React.createClass({
     }
     return (
 
-      <Col className="productInstance" md={3} xs={6}>
+      <Col className="productInstance" md={this.props.md} xs={6}>
         <Thumbnail className="thumbnail" href={this.geturl()} src={this.props.product.imgUrl} alt={this.props.product.name}>
 
         </Thumbnail>
-        <h3>{this.props.product.name}</h3>
-        <p>{this.props.product.description}</p>
+        <p className="productTitle">{this.props.product.name}</p>
+        <p className="productDescription">{this.props.product.description}</p>
         <p>
           <span><Icon icon="star" button/>  加入收藏</span>
         </p>
