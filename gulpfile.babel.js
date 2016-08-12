@@ -86,7 +86,7 @@ gulp.task('copy', function() {
 
 // 编译 Less，添加浏览器前缀
 gulp.task('styles', function() {
-  return gulp.src(['app/less/app.less'])
+  return gulp.src(['app/less/*.less'])
     .pipe($.less())
     .pipe($.postcss([autoprefixer({browsers: AUTOPREFIXER_BROWSERS})]))
     .pipe(gulp.dest('dist/css'))
@@ -160,7 +160,7 @@ gulp.task('build', function(cb) {
 // 监视源文件变化自动cd编译
 gulp.task('watch', function() {
   gulp.watch('app/**/*.html', ['html']);
-  gulp.watch('app/less/**/*less', ['styles']);
+  gulp.watch('app/less/**/*.less', ['styles']);
   gulp.watch('app/i/**/*', ['images']);
   gulp.watch('app/**/*.js', ['eslint']);
 });

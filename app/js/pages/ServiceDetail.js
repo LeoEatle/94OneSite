@@ -250,24 +250,17 @@ const ServiceDetail = React.createClass({
             "price" : 100
           },
           {
-            "id" : '1:1',
-            "imgUrl" : '../i/taobaojpg/3.jpg',
-            "name" : '云怡设计',
-            "description" : '专业纯手工签名设计',
+            "id" : '1:2',
+            "imgUrl" : '../i/zhihu/2.jpg',
+            "name" : '超细致糖霜饼干礼盒',
+            "description" : '糖霜饼干 送礼超精致 一组四块礼盒装',
             "price" : 100
           },
           {
-            "id" : '1:1',
-            "imgUrl" : '../i/taobaojpg/4.jpg',
-            "name" : '云怡设计',
-            "description" : '专业纯手工签名设计',
-            "price" : 100
-          },
-          {
-            "id" : '1:1',
-            "imgUrl" : '../i/taobaojpg/5.jpg',
-            "name" : '云怡设计',
-            "description" : '专业纯手工签名设计',
+            "id" : '1:3',
+            "imgUrl" : '../i/zhihu/3.jpg',
+            "name" : '基础糖霜饼干体验课',
+            "description" : '从零开始教学,饼干制坯、铺面,糖霜制作',
             "price" : 100
           }
         ]
@@ -364,7 +357,7 @@ const ServiceDetail = React.createClass({
 
              <Row>
 
-               <Col sm={12}  className="servicePictures" >
+               <div   className="servicePictures" >
                  <Slider theme='a5'>
                    {this.state.service.pictureUrl.map(
                      (url, index)=>{
@@ -376,7 +369,7 @@ const ServiceDetail = React.createClass({
                      }
                    )}
                  </Slider>
-               </Col>
+               </div>
              </Row>
 
              <Row className="serviceRow">
@@ -451,10 +444,10 @@ const ServiceDetail = React.createClass({
              </Row>
              <Row>
                <Col className="userPicture" sm={12}>
-                 <Slider>
+                 <Slider theme="a5" >
                    {this.state.user.userPicture.map(function (url, i) {
                      return(
-                       <Slider.Item key={i} thumbnail={url}>
+                       <Slider.Item key={i}>
                          <img src={url}/>
                        </Slider.Item>
                      )
@@ -465,8 +458,6 @@ const ServiceDetail = React.createClass({
              {/*other service */}
              <Row>
                <h1 className="titleBorder">我的其它服务</h1>
-
-
                {this.state.user.userService.map((product, index) => {
                  return (<ProductInstance md={6} key={index} product={product}></ProductInstance>);
                })}

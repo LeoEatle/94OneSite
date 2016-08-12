@@ -13,8 +13,9 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {deepOrange500} from 'material-ui/styles/colors';
 import SiteFooter from './components/SiteFooter';
-import MenuInstance from './components/MenuInstance';
-import Navbar_bs from './components/Navbar_bs'
+//import MenuInstance from './components/MenuInstance';
+import Navbar_bs from './components/Navbar_bs';
+import CircleMenu from './components/CircleMenu';
 
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
@@ -51,7 +52,8 @@ const App = React.createClass({
       <MuiThemeProvider muiTheme={muiTheme}>
         <div className="ask-page">
           <Navbar_bs username={this.state.logged}></Navbar_bs>
-          <MenuInstance />
+          {/*<MenuInstance />*/}
+          <CircleMenu></CircleMenu>
           <main className="ask-main">
             {this.props.children}
           </main>
@@ -70,6 +72,7 @@ import Category from './pages/Category';
 //import userRegister from './pages/userRegister';
 import sellerRegister from './pages/sellerRegister';
 import ServiceDetail from './pages/ServiceDetail';
+import Test from './pages/Test';
 
 const routes = (
   <Router history={hashHistory}>
@@ -81,6 +84,7 @@ const routes = (
       <Route path="/sellerRegister" component={sellerRegister} />
       <Route path="/Categories/:category" component={Category} />
       <Route path="/details/:userid/:serviceid" component={ServiceDetail} />
+      <Route path="/test" component={Test} />
     </Route>
   </Router>
 );

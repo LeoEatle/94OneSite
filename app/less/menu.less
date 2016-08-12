@@ -1,0 +1,53 @@
+@theme-color :  #CDDC39;
+@important-color : red;
+
+.menuRow{
+  width: 100%;
+}
+.menuWrapper{
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  margin: 0 auto;
+
+}
+
+.menuCircle{
+  display: inline-block;
+  position: relative;
+  background-color: @theme-color ;
+  border-radius: 50%;
+  width: 4.5rem;
+  height: 4.5rem;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.5rem;
+  line-height: 4.5rem;
+  cursor: pointer;
+
+  a{
+    text-decoration: none;
+  }
+  ul{
+    display: none;
+    min-width: 10rem;
+    margin-left: -2em;//抵消其它框架的padding
+    background-color: whitesmoke;
+    position: absolute;
+    padding: 0px;
+    z-index: 100;
+    left: 0;
+    top: 4.5rem;
+    box-shadow: rgba(0,0,0,0.16) 0 2px 4px;
+    transition: all 0.3s ease 0s;
+    li{
+      list-style-type: none;
+      text-align: center;
+      border-bottom: 0.2rem solid @theme-color;
+    }
+  }
+}
+
+.activated{
+  display: block !important;
+}
